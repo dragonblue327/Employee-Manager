@@ -1,12 +1,36 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8D4A9C30-AC06-45FA-9B1D-AD16D0BF2B3D}|Employee.Manager\\Employee.Manager.csproj|c:\\users\\drago\\source\\repos\\employee.manager.app\\employee.manager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8D4A9C30-AC06-45FA-9B1D-AD16D0BF2B3D}|Employee.Manager\\Employee.Manager.csproj|solutionrelative:employee.manager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Manager\\Form1.cs",
+              "RelativeDocumentMoniker": "Employee.Manager\\Form1.cs",
+              "ToolTip": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Manager\\Form1.cs [Design]",
+              "RelativeToolTip": "Employee.Manager\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T17:19:40.338Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

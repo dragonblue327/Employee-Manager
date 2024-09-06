@@ -1,9 +1,6 @@
-﻿using ClosedXML.Excel;
-using Employee.Application.DTO;
+﻿
 using Employee.Application.Interfaces;
 using Employee.Application.IServices;
-using Employee.Application.Services;
-using OfficeOpenXml;
 
 namespace Employee.Manager
 {
@@ -24,7 +21,7 @@ namespace Employee.Manager
 
 			dataGridView1.CellClick += dataGridView1_CellClick;
 		}
-		private async void LoadDataAsync()
+		private async Task LoadDataAsync()
 		{
 			try
 			{
@@ -55,7 +52,7 @@ namespace Employee.Manager
 			var form2 = new NewDepartment(_employeeService, _departmentService);
 			form2.Show();
 		}
-		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		private async void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 
 			if (e.ColumnIndex == dataGridView1.Columns["DataGridViewButtonColumn"].Index && e.RowIndex >= 0)
@@ -78,7 +75,7 @@ namespace Employee.Manager
 				var result = MessageBox.Show("Вы уверены, что хотите удалить " + NameValue +"?", "Подтверждать удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 				if (result == DialogResult.Yes)
 				{
-					_employeeService.DeleteAsync(idValue);
+					await _employeeService.DeleteAsync(idValue);
 					MessageBox.Show("сотрудник успешно удален.", "удалить", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					LoadDataAsync();
 				}
@@ -112,8 +109,7 @@ namespace Employee.Manager
 				row.Visible = rowVisible;
 			}
 		}
-
-		private void test_Click(object sender, EventArgs e)
+		private async Task openDialog()
 		{
 			using (FileDialog fileDialog = new OpenFileDialog())
 			{
@@ -123,6 +119,10 @@ namespace Employee.Manager
 					_employeeService.SaveDataFromExcelFileAsync(fileName);
 				}
 			}
+		}
+		private async void test_Click(object sender, EventArgs e)
+		{
+			await openDialog();
 		}
 	}
 }

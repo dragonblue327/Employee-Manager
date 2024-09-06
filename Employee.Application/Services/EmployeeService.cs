@@ -176,6 +176,9 @@ public class EmployeeService : IEmployeeService
 					new DepartmentDto { Name = GetCellValue(worksheet, row, columnIndices, "Подразделение") }
 				}
 					};
+					if (employee.TerminationDate != null) { 
+						employee.RecordStatus= DTO.RecordStatus.Closed;
+					}
 					employees.Add(employee);
 				}
 			}

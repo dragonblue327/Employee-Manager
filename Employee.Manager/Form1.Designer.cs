@@ -31,12 +31,12 @@
 			button1 = new Button();
 			textBox1 = new TextBox();
 			dataGridView1 = new DataGridView();
+			DataGridViewButtonColumn = new DataGridViewButtonColumn();
+			Delete = new DataGridViewButtonColumn();
 			button2 = new Button();
 			linkLabel1 = new LinkLabel();
 			Search = new Button();
 			test = new Button();
-			DataGridViewButtonColumn = new DataGridViewButtonColumn();
-			Delete = new DataGridViewButtonColumn();
 			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
 			SuspendLayout();
 			// 
@@ -72,6 +72,25 @@
 			dataGridView1.RowTemplate.Height = 29;
 			dataGridView1.Size = new Size(932, 220);
 			dataGridView1.TabIndex = 2;
+			// 
+			// DataGridViewButtonColumn
+			// 
+			DataGridViewButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+			DataGridViewButtonColumn.HeaderText = "Edit";
+			DataGridViewButtonColumn.MinimumWidth = 10;
+			DataGridViewButtonColumn.Name = "DataGridViewButtonColumn";
+			DataGridViewButtonColumn.ReadOnly = true;
+			DataGridViewButtonColumn.Resizable = DataGridViewTriState.True;
+			DataGridViewButtonColumn.Text = "edit";
+			DataGridViewButtonColumn.Width = 41;
+			// 
+			// Delete
+			// 
+			Delete.HeaderText = "Delete";
+			Delete.MinimumWidth = 6;
+			Delete.Name = "Delete";
+			Delete.ReadOnly = true;
+			Delete.Width = 41;
 			// 
 			// button2
 			// 
@@ -115,25 +134,6 @@
 			test.TextAlign = ContentAlignment.MiddleLeft;
 			test.UseVisualStyleBackColor = true;
 			test.Click += test_Click;
-			// 
-			// DataGridViewButtonColumn
-			// 
-			DataGridViewButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-			DataGridViewButtonColumn.HeaderText = "Edit";
-			DataGridViewButtonColumn.MinimumWidth = 10;
-			DataGridViewButtonColumn.Name = "DataGridViewButtonColumn";
-			DataGridViewButtonColumn.ReadOnly = true;
-			DataGridViewButtonColumn.Resizable = DataGridViewTriState.True;
-			DataGridViewButtonColumn.Text = "edit";
-			DataGridViewButtonColumn.Width = 41;
-			// 
-			// Delete
-			// 
-			Delete.HeaderText = "Delete";
-			Delete.MinimumWidth = 6;
-			Delete.Name = "Delete";
-			Delete.ReadOnly = true;
-			Delete.Width = 41;
 			// 
 			// Form1
 			// 

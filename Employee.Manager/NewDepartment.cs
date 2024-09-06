@@ -41,35 +41,56 @@ namespace Employee.Manager
 		{
 			try
 			{
-
-				var departmentDto = new DepartmentDto
+				if (ValidateInputs())
 				{
-					Name = DepartmentName.Text,
-					ManagerId = GetSelectedUser()?.Id?? 0 ,
-					Employees = GetSelectedUsers(),
-					ParentDepartmentId = GetSelectedDepartment()?.Id ?? null
 
-				};
-				
+					var departmentDto = new DepartmentDto();
 
-				var createdDepartment = await _departmentService.CreateAsync(departmentDto);
+					departmentDto.Name = DepartmentName.Text;
+					departmentDto.ManagerId = GetSelectedUser()?.Id ?? 0;
+					departmentDto.Employees = GetSelectedUsers();
+					departmentDto.ParentDepartmentId = GetSelectedDepartment()?.Id ?? null;
 
-				MessageBox.Show($"Department created with ID: {createdDepartment.Id}");
+
+					var createdDepartment = await _departmentService.CreateAsync(departmentDto);
+
+					MessageBox.Show($"Подразделения: {createdDepartment.Name} создана.");
+				}
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show($"An error occurred: {ex.Message}");
+				MessageBox.Show($"выбрате руководителя: {ex.Message}");
 			}
 		}
-		private void SaveButton_Click(object sender, EventArgs e)
+		private async void SaveButton_Click(object sender, EventArgs e)
 		{
-			CreateDepartmentAsync();
-			this.Close();
+			
+			 await CreateDepartmentAsync();
 		}
 		private EmployeeDto GetSelectedUser()
 		{
-			return comboBox2.SelectedItem as EmployeeDto;
+			
+				return comboBox2.SelectedItem as EmployeeDto;
+			
 		}
+		private bool ValidateInputs()
+		{
+			if (comboBox2.SelectedIndex == -1)
+			{
+				MessageBox.Show("выбрате руководителя.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return false;
+			}
+
+			if (string.IsNullOrWhiteSpace(DepartmentName.Text))
+			{
+				MessageBox.Show("Название Подразделения не может быть пустым.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return false;
+			}
+
+			return true;
+		}
+
+		
 		private DepartmentDto GetSelectedDepartment()
 		{
 			return comboBox1.SelectedItem as DepartmentDto;

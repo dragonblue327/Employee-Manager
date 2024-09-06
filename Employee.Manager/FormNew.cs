@@ -13,6 +13,7 @@ using Employee.Application.Services;
 using Employee.Application.IServices;
 using Employee.Application.Interfaces;
 using Employee.Domain.Entity;
+using System.Text.RegularExpressions;
 
 namespace Employee.Manager
 {
@@ -30,27 +31,98 @@ namespace Employee.Manager
 
 		private void SaveButton_Click(object sender, EventArgs e)
 		{
-			SaveNewEmployee();
-			this.Close();
+			if (ValidateForm())
+			{
+				SaveNewEmployee();
+
+				this.Close();
+			}
 		}
+		private bool ValidateForm()
+		{
+			bool isValid = true;
+
+			if (string.IsNullOrWhiteSpace(FullName.Text))
+			{
+				MessageBox.Show("Полное имя не может быть пустым.", "Ошибка валидации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				isValid = false;
+			}
+			else if (FullName.Text.Length > 100)
+			{
+				MessageBox.Show("Полное имя не может быть длиннее 100 символов.", "Ошибка валидации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				isValid = false;
+			}
+
+			else if(string.IsNullOrWhiteSpace(EmployeeNumber.Text))
+			{
+				MessageBox.Show("Номер сотрудника не может быть пустым.", "Ошибка валидации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				isValid = false;
+			}
+			else if (!Regex.IsMatch(EmployeeNumber.Text, @"^\d{5}$"))
+			{
+				MessageBox.Show("Номер сотрудника должен состоять из 5 цифр.", "Ошибка валидации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				isValid = false;
+			}
+
+			else if(string.IsNullOrWhiteSpace(Position.Text))
+			{
+				MessageBox.Show("Должность не может быть пустой.", "Ошибка валидации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				isValid = false;
+			}
+			else if (Position.Text.Length > 50)
+			{
+				MessageBox.Show("Должность не может быть длиннее 50 символов.", "Ошибка валидации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				isValid = false;
+			}
+			else if(string.IsNullOrWhiteSpace(Email.Text))
+			{
+				MessageBox.Show("Электронная почта не может быть пустой.", "Ошибка валидации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				isValid = false;
+			}
+			else if (!Regex.IsMatch(Email.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+			{
+				MessageBox.Show("Неверный адрес электронной почты.", "Ошибка валидации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				isValid = false;
+			}
+			else if(string.IsNullOrWhiteSpace(Phone.Text))
+			{
+				MessageBox.Show("Номер телефона не может быть пустым.", "Ошибка валидации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				isValid = false;
+			}
+			else if (!Regex.IsMatch(Phone.Text, @"^\+?\d{10,15}$"))
+			{
+				MessageBox.Show("Неверный номер телефона.", "Ошибка валидации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				isValid = false;
+			}
+			else if(HireDate.Value == null)
+			{
+				MessageBox.Show("Дата найма не может быть пустой.", "Ошибка валидации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				isValid = false;
+			}
+
+			return isValid;
+		}
+
+
 		private async void SaveNewEmployee()
 		{
-			var tempDepartment =  GetSelectedDepartment();
-			var employeeDto = new EmployeeDto
-			{
-				FullName = FullName.Text,
-				EmployeeNumber = EmployeeNumber.Text,
-				Position = Position.Text,
-				Email = Email.Text,
-				Phone = Phone.Text,
-				HireDate = HireDate.Value,
-				
-			};
-			if (tempDepartment != null)
-			{
-				employeeDto.Departments.Add(tempDepartment);
-			}
-			_employeeService.CreateAsync(employeeDto);
+			
+				var tempDepartment = GetSelectedDepartment();
+				var employeeDto = new EmployeeDto
+				{
+					FullName = FullName.Text,
+					EmployeeNumber = EmployeeNumber.Text,
+					Position = Position.Text,
+					Email = Email.Text,
+					Phone = Phone.Text,
+					HireDate = HireDate.Value
+				};
+				if (tempDepartment != null)
+				{
+					employeeDto.Departments.Add(tempDepartment);
+				}
+				await _employeeService.CreateAsync(employeeDto);
+			
 		}
 		private DepartmentDto GetSelectedDepartment()
 		{

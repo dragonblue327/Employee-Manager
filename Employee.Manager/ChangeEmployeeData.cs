@@ -1,16 +1,6 @@
 ﻿using Employee.Application.DTO;
 using Employee.Application.Interfaces;
 using Employee.Application.IServices;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Employee.Manager
 {
@@ -124,7 +114,17 @@ namespace Employee.Manager
 			employee.Email = Email.Text;
 			employee.Position = Position.Text;
 			employee.RecordStatus = GetSelectedStatus();
-			employee.Departments.Add(department);
+			if (employee.RecordStatus.Equals(RecordStatus.Closed)) {
+				employee.TerminationDate = DateTime.UtcNow;
+			}
+			if (department != null)
+			{
+				employee.Departments.Add(department);
+			}
+			else
+			{
+				employee.Departments.Clear();
+			}
 			await _employeeService.SaveAsync(employee);
 			
 

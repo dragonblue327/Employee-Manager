@@ -67,14 +67,17 @@ public class EmployeeService : IEmployeeService
 			TerminationDate = employeeDto.TerminationDate,
 			RecordStatus = (Domain.Entity.RecordStatus)employeeDto.RecordStatus
 		};
-			foreach (var department in employeeDto.Departments) {
-				var tempDepartment = new Department
+			if (employeeDto.Departments !=null)
+			{
+				foreach (var department in employeeDto.Departments)
 				{
-					Id = department.Id
-				};
-				employee.Departments.Add(tempDepartment);
+					var tempDepartment = new Department
+					{
+						Id = department.Id
+					};
+					employee.Departments.Add(tempDepartment);
+				}
 			}
-
 		await _employeeRepository.SaveAsync(employee);
 	}
 
@@ -155,7 +158,6 @@ public class EmployeeService : IEmployeeService
 				{
 					var header = worksheet.Cell(1, col).GetString().Trim();
 					columnIndices[header] = col;
-					Console.WriteLine($"Header: '{header}', Column: {col}");
 				}
 
 				for (int row = 2; row <= rowCount; row++)

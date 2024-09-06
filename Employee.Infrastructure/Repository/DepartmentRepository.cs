@@ -19,23 +19,34 @@ namespace Employee.Infrastructure.Repository
 		{
 			try
 			{
-				if (department.Manager == null) { 
-					var temp = await _context.Employees.FindAsync(department.ManagerId);
-					department.Manager = temp;
+				var tempEmployees = department.Employees.ToList();
+				department.Employees.Clear();
+
+				foreach (var employee in tempEmployees)
+				{
+					var existingEmployee = await _context.Employees.FindAsync(employee.Id);
+					if (existingEmployee != null)
+					{
+						existingEmployee.Departments.Add (department);
+						department.Employees.Add(existingEmployee);
+					}
 				}
+
 				_context.Departments.Add(department);
 				await _context.SaveChangesAsync();
 				return department;
 			}
-			catch (DbUpdateException ex)
+			catch (DbUpdateException dbException)
 			{
-				throw new Exception("An error occurred while creating the department.", ex);
+				throw new Exception("A database error occurred while creating the department record.", dbException);
 			}
-			catch (Exception ex)
+			catch (Exception exception)
 			{
-				throw new Exception("An unexpected error occurred.", ex);
+				throw new Exception("An unexpected error occurred.", exception);
 			}
 		}
+
+
 
 		public async Task SaveAsync(Department department)
 		{
@@ -61,6 +72,13 @@ namespace Employee.Infrastructure.Repository
 				var department = await _context.Departments.FindAsync(id);
 				if (department != null)
 				{
+					var childDepartments = _context.Departments.Where(d => d.ParentDepartmentId == id).ToList();
+				
+					 foreach (var child in childDepartments)
+					 {
+					     child.ParentDepartmentId = null; 
+					 }
+
 					_context.Departments.Remove(department);
 					await _context.SaveChangesAsync();
 				}
@@ -74,6 +92,7 @@ namespace Employee.Infrastructure.Repository
 				throw new Exception("An unexpected error occurred.", ex);
 			}
 		}
+
 
 		public async Task<Department> GetByIdAsync(int id)
 		{

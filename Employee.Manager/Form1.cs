@@ -28,7 +28,7 @@ namespace Employee.Manager
 				var employees = await _employeeService.GetAllAsync();
 
 				dataGridView1.DataSource = employees.ToList();
-				if(!dataGridView1.Columns.Contains("DepartmentNames"))
+				if (!dataGridView1.Columns.Contains("DepartmentNames"))
 					dataGridView1.Columns["DepartmentNames"].DataPropertyName = "DepartmentNames";
 				dataGridView1.Columns["Departments"].Visible = false;
 				dataGridView1.Columns["Id"].Visible = false;
@@ -39,11 +39,13 @@ namespace Employee.Manager
 				MessageBox.Show($"An error occurred: {ex.Message}");
 			}
 		}
-	
+
 		private void button1_Click(object sender, EventArgs e)
 		{
 			var form2 = new FormNew(_employeeService, _departmentService);
+			
 			form2.Show();
+			this.Hide();
 
 		}
 
@@ -51,6 +53,7 @@ namespace Employee.Manager
 		{
 			var form2 = new NewDepartment(_employeeService, _departmentService);
 			form2.Show();
+			this.Close();
 		}
 		private async void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -72,7 +75,7 @@ namespace Employee.Manager
 				var selectedRow = dataGridView1.Rows[e.RowIndex];
 				var idValue = Convert.ToInt32(selectedRow.Cells["Id"].Value);
 				var NameValue = selectedRow.Cells["FullName"].Value;
-				var result = MessageBox.Show("Вы уверены, что хотите удалить " + NameValue +"?", "Подтверждать удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+				var result = MessageBox.Show("Вы уверены, что хотите удалить " + NameValue + "?", "Подтверждать удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 				if (result == DialogResult.Yes)
 				{
 					await _employeeService.DeleteAsync(idValue);
@@ -123,6 +126,14 @@ namespace Employee.Manager
 		private async void test_Click(object sender, EventArgs e)
 		{
 			await openDialog();
+		}
+
+		private async void button3_Click(object sender, EventArgs e)
+		{
+			var form2 = new Departments(_employeeService, _departmentService);
+			await form2.LoadDataAsync();
+			form2.Show();
+			this.Hide();
 		}
 	}
 }

@@ -25,6 +25,8 @@ namespace Employee.Application.Services
 				RecordStatus = 0,
 				Employees = departmentDto.Employees.Select(e => new Employe
 				{
+
+					Id = e.Id,
 					FullName = e.FullName,
 					EmployeeNumber = e.EmployeeNumber,
 					Position = e.Position,

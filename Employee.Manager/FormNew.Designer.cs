@@ -184,12 +184,13 @@
 			label7.Name = "label7";
 			label7.Size = new Size(119, 20);
 			label7.TabIndex = 16;
-			label7.Text = "Подразделения";
+			label7.Text = "Подразделение";
 			// 
 			// FormNew
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
+			BackColor = Color.White;
 			ClientSize = new Size(400, 484);
 			Controls.Add(label7);
 			Controls.Add(comboBox1);
@@ -208,6 +209,7 @@
 			Controls.Add(EmployeeNumber);
 			Controls.Add(FullName);
 			Name = "FormNew";
+			ShowIcon = false;
 			Text = "FormNew";
 			Load += FormNew_Load;
 			ResumeLayout(false);

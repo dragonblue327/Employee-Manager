@@ -145,6 +145,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
+			BackColor = Color.White;
 			ClientSize = new Size(821, 251);
 			Controls.Add(comboBox2);
 			Controls.Add(label4);
@@ -158,6 +159,7 @@
 			Controls.Add(label1);
 			Controls.Add(DepartmentName);
 			Name = "NewDepartment";
+			ShowIcon = false;
 			Text = "NewDepartment";
 			Load += NewDepartment_Load;
 			ResumeLayout(false);

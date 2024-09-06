@@ -34,7 +34,8 @@ namespace Employee.Manager
 			if (ValidateForm())
 			{
 				SaveNewEmployee();
-
+				var form2 = new Form1(_employeeService, _departmentService);
+				form2.Show();
 				this.Close();
 			}
 		}
@@ -131,17 +132,16 @@ namespace Employee.Manager
 		private void CancelButton_Click(object sender, EventArgs e)
 		{
 			var form2 = new Form1(_employeeService, _departmentService);
-
 			form2.Show();
 			this.Close();
 		}
 
-		private void FormNew_Load(object sender, EventArgs e)
+		public async void FormNew_Load(object sender, EventArgs e)
 		{
-			LoadDepartmentAsync();
+			await LoadDepartmentAsync();
 		}
 
-		private async void LoadDepartmentAsync()
+		private async Task LoadDepartmentAsync()
 		{
 			try
 			{

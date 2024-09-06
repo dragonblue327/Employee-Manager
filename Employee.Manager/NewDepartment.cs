@@ -56,6 +56,10 @@ namespace Employee.Manager
 
 					MessageBox.Show($"Подразделения: {createdDepartment.Name} создана.");
 				}
+				var departments = new Departments(_employeeService, _departmentService);
+				await departments.LoadDataAsync();
+				departments.Show();
+				this.Close();
 			}
 			catch (Exception ex)
 			{
@@ -66,6 +70,7 @@ namespace Employee.Manager
 		{
 			
 			 await CreateDepartmentAsync();
+			
 		}
 		private EmployeeDto GetSelectedUser()
 		{
@@ -153,8 +158,11 @@ namespace Employee.Manager
 			else comboBox1.Visible = false;
 		}
 
-		private void CancelButton_Click(object sender, EventArgs e)
+		private async void CancelButton_Click(object sender, EventArgs e)
 		{
+			var departments = new Departments(_employeeService, _departmentService);
+			await departments.LoadDataAsync();
+			departments.Show();
 			this.Close();
 		}
 	}

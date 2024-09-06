@@ -21,9 +21,6 @@ namespace Employee.Infrastructure
 				options.UseSqlServer(configuration.GetConnectionString("ConStr") ??
 				throw new InvalidOperationException("Connection String 'ConStr' Not Found")));
 
-			// Register your services
-			//services.AddTransient<DepartmentService>();
-			//services.AddTransient<EmployeeService>();
 
 			return services;
 		}

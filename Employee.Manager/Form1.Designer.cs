@@ -151,6 +151,7 @@
 			Name = "Form1";
 			ShowIcon = false;
 			Text = "Employee Manager";
+			FormClosing += Form1_FormClosing;
 			Load += Form1_Load;
 			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
 			ResumeLayout(false);

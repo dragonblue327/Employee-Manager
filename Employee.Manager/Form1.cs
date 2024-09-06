@@ -1,6 +1,7 @@
 ﻿
 using Employee.Application.Interfaces;
 using Employee.Application.IServices;
+using System.Diagnostics;
 
 namespace Employee.Manager
 {
@@ -20,7 +21,7 @@ namespace Employee.Manager
 		public void Form1_Load(object sender, EventArgs e)
 		{
 			LoadDataAsync();
-
+			this.FormClosing += Form1_FormClosing;
 			dataGridView1.CellClick += dataGridView1_CellClick;
 		}
 		public async Task LoadDataAsync()
@@ -45,7 +46,7 @@ namespace Employee.Manager
 		public void button1_Click(object sender, EventArgs e)
 		{
 			var form2 = new FormNew(_employeeService, _departmentService);
-			
+
 			form2.Show();
 			this.Hide();
 
@@ -136,6 +137,31 @@ namespace Employee.Manager
 			await form2.LoadDataAsync();
 			form2.Show();
 			this.Hide();
+		}
+
+		
+		private void KillProcessByName(string processName)
+		{
+			try
+			{
+				Process[] processes = Process.GetProcessesByName(processName);
+				foreach (Process process in processes)
+				{
+					process.Kill();
+					process.WaitForExit();
+				}
+				MessageBox.Show($"Process '{processName}' has been terminated.", "Process Terminated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			string processName = "Employee.Manager";
+			KillProcessByName(processName);
 		}
 	}
 }

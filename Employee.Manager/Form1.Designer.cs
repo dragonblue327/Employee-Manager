@@ -31,12 +31,12 @@
 			button1 = new Button();
 			textBox1 = new TextBox();
 			dataGridView1 = new DataGridView();
+			DataGridViewButtonColumn = new DataGridViewButtonColumn();
+			Delete = new DataGridViewButtonColumn();
 			linkLabel1 = new LinkLabel();
 			Search = new Button();
 			test = new Button();
 			button3 = new Button();
-			DataGridViewButtonColumn = new DataGridViewButtonColumn();
-			Delete = new DataGridViewButtonColumn();
 			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
 			SuspendLayout();
 			// 
@@ -72,6 +72,26 @@
 			dataGridView1.RowTemplate.Height = 29;
 			dataGridView1.Size = new Size(998, 284);
 			dataGridView1.TabIndex = 2;
+			// 
+			// DataGridViewButtonColumn
+			// 
+			DataGridViewButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+			DataGridViewButtonColumn.FlatStyle = FlatStyle.Popup;
+			DataGridViewButtonColumn.HeaderText = "Редактировать";
+			DataGridViewButtonColumn.MinimumWidth = 10;
+			DataGridViewButtonColumn.Name = "DataGridViewButtonColumn";
+			DataGridViewButtonColumn.ReadOnly = true;
+			DataGridViewButtonColumn.Resizable = DataGridViewTriState.True;
+			DataGridViewButtonColumn.Text = "edit";
+			DataGridViewButtonColumn.Width = 117;
+			// 
+			// Delete
+			// 
+			Delete.HeaderText = "Удалить";
+			Delete.MinimumWidth = 6;
+			Delete.Name = "Delete";
+			Delete.ReadOnly = true;
+			Delete.Width = 50;
 			// 
 			// linkLabel1
 			// 
@@ -115,26 +135,6 @@
 			button3.UseVisualStyleBackColor = true;
 			button3.Click += button3_Click;
 			// 
-			// DataGridViewButtonColumn
-			// 
-			DataGridViewButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-			DataGridViewButtonColumn.FlatStyle = FlatStyle.Popup;
-			DataGridViewButtonColumn.HeaderText = "Редактировать";
-			DataGridViewButtonColumn.MinimumWidth = 10;
-			DataGridViewButtonColumn.Name = "DataGridViewButtonColumn";
-			DataGridViewButtonColumn.ReadOnly = true;
-			DataGridViewButtonColumn.Resizable = DataGridViewTriState.True;
-			DataGridViewButtonColumn.Text = "edit";
-			DataGridViewButtonColumn.Width = 117;
-			// 
-			// Delete
-			// 
-			Delete.HeaderText = "Удалить";
-			Delete.MinimumWidth = 6;
-			Delete.Name = "Delete";
-			Delete.ReadOnly = true;
-			Delete.Width = 50;
-			// 
 			// Form1
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
@@ -161,12 +161,12 @@
 
 		private Button button1;
 		private TextBox textBox1;
-		private DataGridView dataGridView1;
 		private LinkLabel linkLabel1;
 		private Button Search;
 		private Button test;
 		private Button button3;
 		private DataGridViewButtonColumn DataGridViewButtonColumn;
 		private DataGridViewButtonColumn Delete;
+		public DataGridView dataGridView1;
 	}
 }

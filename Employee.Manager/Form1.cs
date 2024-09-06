@@ -8,20 +8,22 @@ namespace Employee.Manager
 	{
 		private readonly IEmployeeService _employeeService;
 		private readonly IDepartmentService _departmentService;
+
 		public Form1(IEmployeeService employeeService, IDepartmentService departmentService)
 		{
 			InitializeComponent();
 			_employeeService = employeeService;
 			_departmentService = departmentService;
+
 		}
 
-		private void Form1_Load(object sender, EventArgs e)
+		public void Form1_Load(object sender, EventArgs e)
 		{
 			LoadDataAsync();
 
 			dataGridView1.CellClick += dataGridView1_CellClick;
 		}
-		private async Task LoadDataAsync()
+		public async Task LoadDataAsync()
 		{
 			try
 			{
@@ -40,7 +42,7 @@ namespace Employee.Manager
 			}
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		public void button1_Click(object sender, EventArgs e)
 		{
 			var form2 = new FormNew(_employeeService, _departmentService);
 			
@@ -49,13 +51,13 @@ namespace Employee.Manager
 
 		}
 
-		private void button2_Click(object sender, EventArgs e)
+		public void button2_Click(object sender, EventArgs e)
 		{
 			var form2 = new NewDepartment(_employeeService, _departmentService);
 			form2.Show();
 			this.Close();
 		}
-		private async void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		public async void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 
 			if (e.ColumnIndex == dataGridView1.Columns["DataGridViewButtonColumn"].Index && e.RowIndex >= 0)
@@ -89,12 +91,12 @@ namespace Employee.Manager
 			}
 		}
 
-		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		public void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			LoadDataAsync();
 		}
 
-		private void Search_Click(object sender, EventArgs e)
+		public void Search_Click(object sender, EventArgs e)
 		{
 			string searchValue = textBox1.Text.ToLower();
 			dataGridView1.CurrentCell = null;
@@ -112,7 +114,7 @@ namespace Employee.Manager
 				row.Visible = rowVisible;
 			}
 		}
-		private async Task openDialog()
+		public async Task openDialog()
 		{
 			using (FileDialog fileDialog = new OpenFileDialog())
 			{
@@ -123,12 +125,12 @@ namespace Employee.Manager
 				}
 			}
 		}
-		private async void test_Click(object sender, EventArgs e)
+		public async void test_Click(object sender, EventArgs e)
 		{
 			await openDialog();
 		}
 
-		private async void button3_Click(object sender, EventArgs e)
+		public async void button3_Click(object sender, EventArgs e)
 		{
 			var form2 = new Departments(_employeeService, _departmentService);
 			await form2.LoadDataAsync();

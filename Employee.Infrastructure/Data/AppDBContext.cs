@@ -18,21 +18,26 @@ namespace Employee.Infrastructure.Data
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Department>()
+				.HasMany(d => d.Employees)
+				.WithMany(e => e.Departments)
+				.UsingEntity(j => j.ToTable("DepartmentEmployee"));
+
+			modelBuilder.Entity<Department>()
 				.HasOne(d => d.ParentDepartment)
 				.WithMany()
 				.HasForeignKey(d => d.ParentDepartmentId)
+				.IsRequired(false) 
 				.OnDelete(DeleteBehavior.Restrict);
 
 			modelBuilder.Entity<Department>()
 				.HasOne(d => d.Manager)
 				.WithMany()
 				.HasForeignKey(d => d.ManagerId)
+				.IsRequired(false)
 				.OnDelete(DeleteBehavior.Restrict);
-
-			modelBuilder.Entity<Department>()
-				.HasMany(d => d.Employees)
-				.WithOne(e => e.Department)
-				.HasForeignKey(e => e.DepartmentId);
 		}
+
+
+
 	}
 }

@@ -3,6 +3,46 @@
   "WorkspaceRootPath": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{682C4109-1787-438D-AA1D-31FB7831B677}|Employee.Infrastructure\\Employee.Infrastructure.csproj|c:\\users\\drago\\source\\repos\\employee.manager.app\\employee.infrastructure\\repository\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{682C4109-1787-438D-AA1D-31FB7831B677}|Employee.Infrastructure\\Employee.Infrastructure.csproj|solutionrelative:employee.infrastructure\\repository\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01C980AA-83D6-4A3C-85E9-700D8F27768E}|Employee.Application\\Employee.Application.csproj|c:\\users\\drago\\source\\repos\\employee.manager.app\\employee.application\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01C980AA-83D6-4A3C-85E9-700D8F27768E}|Employee.Application\\Employee.Application.csproj|solutionrelative:employee.application\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D4A9C30-AC06-45FA-9B1D-AD16D0BF2B3D}|Employee.Manager\\Employee.Manager.csproj|c:\\users\\drago\\source\\repos\\employee.manager.app\\employee.manager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D4A9C30-AC06-45FA-9B1D-AD16D0BF2B3D}|Employee.Manager\\Employee.Manager.csproj|solutionrelative:employee.manager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Infrastructure\\Migrations\\20240906124503_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Employee.Infrastructure\\Migrations\\20240906124503_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{682C4109-1787-438D-AA1D-31FB7831B677}|Employee.Infrastructure\\Employee.Infrastructure.csproj|c:\\users\\drago\\source\\repos\\employee.manager.app\\employee.infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{682C4109-1787-438D-AA1D-31FB7831B677}|Employee.Infrastructure\\Employee.Infrastructure.csproj|solutionrelative:employee.infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{682C4109-1787-438D-AA1D-31FB7831B677}|Employee.Infrastructure\\Employee.Infrastructure.csproj|c:\\users\\drago\\source\\repos\\employee.manager.app\\employee.infrastructure\\repository\\departmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{682C4109-1787-438D-AA1D-31FB7831B677}|Employee.Infrastructure\\Employee.Infrastructure.csproj|solutionrelative:employee.infrastructure\\repository\\departmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D4A9C30-AC06-45FA-9B1D-AD16D0BF2B3D}|Employee.Manager\\Employee.Manager.csproj|c:\\users\\drago\\source\\repos\\employee.manager.app\\employee.manager\\newdepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D4A9C30-AC06-45FA-9B1D-AD16D0BF2B3D}|Employee.Manager\\Employee.Manager.csproj|solutionrelative:employee.manager\\newdepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Infrastructure\\Migrations\\20240906124205_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Employee.Infrastructure\\Migrations\\20240906124205_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD6191A4-A263-482C-A9C5-76F74359E07D}|Employee.Domain\\Employee.Domain.csproj|c:\\users\\drago\\source\\repos\\employee.manager.app\\employee.domain\\entity\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD6191A4-A263-482C-A9C5-76F74359E07D}|Employee.Domain\\Employee.Domain.csproj|solutionrelative:employee.domain\\entity\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01C980AA-83D6-4A3C-85E9-700D8F27768E}|Employee.Application\\Employee.Application.csproj|c:\\users\\drago\\source\\repos\\employee.manager.app\\employee.application\\iservices\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01C980AA-83D6-4A3C-85E9-700D8F27768E}|Employee.Application\\Employee.Application.csproj|solutionrelative:employee.application\\iservices\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8D4A9C30-AC06-45FA-9B1D-AD16D0BF2B3D}|Employee.Manager\\Employee.Manager.csproj|c:\\users\\drago\\source\\repos\\employee.manager.app\\employee.manager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{8D4A9C30-AC06-45FA-9B1D-AD16D0BF2B3D}|Employee.Manager\\Employee.Manager.csproj|solutionrelative:employee.manager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
@@ -14,18 +54,148 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeeService.cs",
+              "DocumentMoniker": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Application\\Services\\EmployeeService.cs",
+              "RelativeDocumentMoniker": "Employee.Application\\Services\\EmployeeService.cs",
+              "ToolTip": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Application\\Services\\EmployeeService.cs",
+              "RelativeToolTip": "Employee.Application\\Services\\EmployeeService.cs",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAgwFIAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T12:31:48.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DepartmentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Infrastructure\\Repository\\DepartmentRepository.cs",
+              "RelativeDocumentMoniker": "Employee.Infrastructure\\Repository\\DepartmentRepository.cs",
+              "ToolTip": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Infrastructure\\Repository\\DepartmentRepository.cs",
+              "RelativeToolTip": "Employee.Infrastructure\\Repository\\DepartmentRepository.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABkAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T07:07:27.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NewDepartment.cs",
+              "DocumentMoniker": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Manager\\NewDepartment.cs",
+              "RelativeDocumentMoniker": "Employee.Manager\\NewDepartment.cs",
+              "ToolTip": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Manager\\NewDepartment.cs",
+              "RelativeToolTip": "Employee.Manager\\NewDepartment.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAADoAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T09:41:38.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IEmployeeService.cs",
+              "DocumentMoniker": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Application\\IServices\\IEmployeeService.cs",
+              "RelativeDocumentMoniker": "Employee.Application\\IServices\\IEmployeeService.cs",
+              "ToolTip": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Application\\IServices\\IEmployeeService.cs",
+              "RelativeToolTip": "Employee.Application\\IServices\\IEmployeeService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T12:33:40.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Manager\\Form1.cs",
+              "RelativeDocumentMoniker": "Employee.Manager\\Form1.cs",
+              "ToolTip": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Manager\\Form1.cs",
+              "RelativeToolTip": "Employee.Manager\\Form1.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAhwFAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T09:52:11.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "EmployeeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Infrastructure\\Repository\\EmployeeRepository.cs",
+              "RelativeDocumentMoniker": "Employee.Infrastructure\\Repository\\EmployeeRepository.cs",
+              "ToolTip": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Infrastructure\\Repository\\EmployeeRepository.cs",
+              "RelativeToolTip": "Employee.Infrastructure\\Repository\\EmployeeRepository.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAEwEgAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T12:32:17.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20240906124503_test.cs",
+              "DocumentMoniker": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Infrastructure\\Migrations\\20240906124503_test.cs",
+              "RelativeDocumentMoniker": "Employee.Infrastructure\\Migrations\\20240906124503_test.cs",
+              "ToolTip": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Infrastructure\\Migrations\\20240906124503_test.cs",
+              "RelativeToolTip": "Employee.Infrastructure\\Migrations\\20240906124503_test.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T12:45:03.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Department.cs",
+              "DocumentMoniker": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Domain\\Entity\\Department.cs",
+              "RelativeDocumentMoniker": "Employee.Domain\\Entity\\Department.cs",
+              "ToolTip": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Domain\\Entity\\Department.cs",
+              "RelativeToolTip": "Employee.Domain\\Entity\\Department.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwA8AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T12:39:26.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Infrastructure\\Data\\AppDBContext.cs",
+              "RelativeDocumentMoniker": "Employee.Infrastructure\\Data\\AppDBContext.cs",
+              "ToolTip": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Infrastructure\\Data\\AppDBContext.cs",
+              "RelativeToolTip": "Employee.Infrastructure\\Data\\AppDBContext.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAgwCMAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T12:44:16.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20240906124205_test.cs",
+              "DocumentMoniker": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Infrastructure\\Migrations\\20240906124205_test.cs",
+              "RelativeDocumentMoniker": "Employee.Infrastructure\\Migrations\\20240906124205_test.cs",
+              "ToolTip": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Infrastructure\\Migrations\\20240906124205_test.cs",
+              "RelativeToolTip": "Employee.Infrastructure\\Migrations\\20240906124205_test.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-06T12:42:06.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Manager\\Form1.cs",
               "RelativeDocumentMoniker": "Employee.Manager\\Form1.cs",
               "ToolTip": "C:\\Users\\drago\\source\\repos\\Employee.Manager.App\\Employee.Manager\\Form1.cs [Design]",
               "RelativeToolTip": "Employee.Manager\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T17:19:40.338Z",
+              "WhenOpened": "2024-09-06T09:51:17.31Z",
               "EditorCaption": " [Design]"
             }
           ]

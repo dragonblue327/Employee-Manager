@@ -4,6 +4,11 @@ using Microsoft.Extensions.Configuration;
 using Employee.Infrastructure;
 using System;
 using System.Windows.Forms;
+using Employee.Application.IServices;
+using Employee.Application.Services;
+using Employee.Domain.Repository;
+using Employee.Infrastructure.Repository;
+using Employee.Application.Interfaces;
 
 namespace Employee.Manager
 {
@@ -31,6 +36,10 @@ namespace Employee.Manager
 				{
 					services.AddInfrastructureServices(context.Configuration);
 					services.AddTransient<Form1>();
+					services.AddTransient<IEmployeeService, EmployeeService>();
+					services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+					services.AddTransient<IDepartmentService, DepartmentService>();
+					services.AddTransient<IDepartmentRepository, DepartmentRepository>();
 				});
 		}
 	}

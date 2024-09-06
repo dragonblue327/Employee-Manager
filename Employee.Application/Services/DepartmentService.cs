@@ -1,12 +1,8 @@
-﻿using Employee.Application.DTO;
+﻿using ClosedXML.Excel;
+using Employee.Application.DTO;
 using Employee.Application.Interfaces;
 using Employee.Domain.Entity;
 using Employee.Domain.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Employee.Application.Services
 {
@@ -26,18 +22,17 @@ namespace Employee.Application.Services
 				Name = departmentDto.Name,
 				ParentDepartmentId = departmentDto.ParentDepartmentId,
 				ManagerId = departmentDto.ManagerId,
+				RecordStatus = 0,
 				Employees = departmentDto.Employees.Select(e => new Employe
 				{
-					Id = e.Id,
 					FullName = e.FullName,
 					EmployeeNumber = e.EmployeeNumber,
 					Position = e.Position,
-					DepartmentId = e.DepartmentId,
 					Email = e.Email,
 					Phone = e.Phone,
 					HireDate = e.HireDate,
 					TerminationDate = e.TerminationDate,
-					RecordStatus = (Domain.Entity.RecordStatus)e.RecordStatus
+					RecordStatus = 0
 				}).ToList()
 			};
 
@@ -55,7 +50,6 @@ namespace Employee.Application.Services
 					FullName = e.FullName,
 					EmployeeNumber = e.EmployeeNumber,
 					Position = e.Position,
-					DepartmentId = e.DepartmentId,
 					Email = e.Email,
 					Phone = e.Phone,
 					HireDate = e.HireDate,
@@ -79,7 +73,6 @@ namespace Employee.Application.Services
 					FullName = e.FullName,
 					EmployeeNumber = e.EmployeeNumber,
 					Position = e.Position,
-					DepartmentId = e.DepartmentId,
 					Email = e.Email,
 					Phone = e.Phone,
 					HireDate = e.HireDate,
@@ -112,7 +105,6 @@ namespace Employee.Application.Services
 					FullName = e.FullName,
 					EmployeeNumber = e.EmployeeNumber,
 					Position = e.Position,
-					DepartmentId = e.DepartmentId,
 					Email = e.Email,
 					Phone = e.Phone,
 					HireDate = e.HireDate,
@@ -138,7 +130,6 @@ namespace Employee.Application.Services
 					FullName = e.FullName,
 					EmployeeNumber = e.EmployeeNumber,
 					Position = e.Position,
-					DepartmentId = e.DepartmentId,
 					Email = e.Email,
 					Phone = e.Phone,
 					HireDate = e.HireDate,
@@ -147,6 +138,7 @@ namespace Employee.Application.Services
 				}).ToList()
 			}).ToList();
 		}
+
 	}
 
 }

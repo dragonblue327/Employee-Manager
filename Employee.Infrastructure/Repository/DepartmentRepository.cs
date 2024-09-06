@@ -19,18 +19,20 @@ namespace Employee.Infrastructure.Repository
 		{
 			try
 			{
+				if (department.Manager == null) { 
+					var temp = await _context.Employees.FindAsync(department.ManagerId);
+					department.Manager = temp;
+				}
 				_context.Departments.Add(department);
 				await _context.SaveChangesAsync();
 				return department;
 			}
 			catch (DbUpdateException ex)
 			{
-				// Handle database update exception
 				throw new Exception("An error occurred while creating the department.", ex);
 			}
 			catch (Exception ex)
 			{
-				// Handle other exceptions
 				throw new Exception("An unexpected error occurred.", ex);
 			}
 		}
@@ -44,12 +46,10 @@ namespace Employee.Infrastructure.Repository
 			}
 			catch (DbUpdateException ex)
 			{
-				// Handle database update exception
 				throw new Exception("An error occurred while saving the department.", ex);
 			}
 			catch (Exception ex)
 			{
-				// Handle other exceptions
 				throw new Exception("An unexpected error occurred.", ex);
 			}
 		}
@@ -67,12 +67,10 @@ namespace Employee.Infrastructure.Repository
 			}
 			catch (DbUpdateException ex)
 			{
-				// Handle database update exception
 				throw new Exception("An error occurred while deleting the department.", ex);
 			}
 			catch (Exception ex)
 			{
-				// Handle other exceptions
 				throw new Exception("An unexpected error occurred.", ex);
 			}
 		}
@@ -96,12 +94,10 @@ namespace Employee.Infrastructure.Repository
 			}
 			catch (DbUpdateException ex)
 			{
-				// Handle database update exception
 				throw new Exception("An error occurred while retrieving the department.", ex);
 			}
 			catch (Exception ex)
 			{
-				// Handle other exceptions
 				throw new Exception("An unexpected error occurred.", ex);
 			}
 		}
@@ -110,20 +106,18 @@ namespace Employee.Infrastructure.Repository
 		{
 			try
 			{
-				return await _context.Departments
-					.Include(d => d.ParentDepartment)
-					.Include(d => d.Manager)
-					.Include(d => d.Employees)
+				return await _context.Departments.AsNoTracking()
+					.Include(d => d.ParentDepartment).AsNoTracking()
+					.Include(d => d.Manager).AsNoTracking()
+					.Include(d => d.Employees).AsNoTracking()
 					.ToListAsync();
 			}
 			catch (DbUpdateException ex)
 			{
-				// Handle database update exception
 				throw new Exception("An error occurred while retrieving the departments.", ex);
 			}
 			catch (Exception ex)
 			{
-				// Handle other exceptions
 				throw new Exception("An unexpected error occurred.", ex);
 			}
 		}

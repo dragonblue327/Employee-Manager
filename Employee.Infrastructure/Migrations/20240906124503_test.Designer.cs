@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Employee.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20240905150602_TestMigration")]
-    partial class TestMigration
+    [Migration("20240906124503_test")]
+    partial class test
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,21 @@ namespace Employee.Infrastructure.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("DepartmentEmploye", b =>
+                {
+                    b.Property<int>("DepartmentsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EmployeesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("DepartmentsId", "EmployeesId");
+
+                    b.HasIndex("EmployeesId");
+
+                    b.ToTable("DepartmentEmployee", (string)null);
+                });
 
             modelBuilder.Entity("Employee.Domain.Entity.Department", b =>
                 {
@@ -41,10 +56,9 @@ namespace Employee.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ParentDepartmentId")
-                        .IsRequired()
                         .HasColumnType("int");
 
-                    b.Property<int>("RecordStatus")
+                    b.Property<int?>("RecordStatus")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -64,9 +78,6 @@ namespace Employee.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DepartmentId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -79,7 +90,7 @@ namespace Employee.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("HireDate")
+                    b.Property<DateTime?>("HireDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Phone")
@@ -90,7 +101,7 @@ namespace Employee.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RecordStatus")
+                    b.Property<int?>("RecordStatus")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("TerminationDate")
@@ -98,9 +109,22 @@ namespace Employee.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepartmentId");
-
                     b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("DepartmentEmploye", b =>
+                {
+                    b.HasOne("Employee.Domain.Entity.Department", null)
+                        .WithMany()
+                        .HasForeignKey("DepartmentsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Employee.Domain.Entity.Employe", null)
+                        .WithMany()
+                        .HasForeignKey("EmployeesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Employee.Domain.Entity.Department", b =>
@@ -113,28 +137,11 @@ namespace Employee.Infrastructure.Migrations
                     b.HasOne("Employee.Domain.Entity.Department", "ParentDepartment")
                         .WithMany()
                         .HasForeignKey("ParentDepartmentId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Manager");
 
                     b.Navigation("ParentDepartment");
-                });
-
-            modelBuilder.Entity("Employee.Domain.Entity.Employe", b =>
-                {
-                    b.HasOne("Employee.Domain.Entity.Department", "Department")
-                        .WithMany("Employees")
-                        .HasForeignKey("DepartmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Department");
-                });
-
-            modelBuilder.Entity("Employee.Domain.Entity.Department", b =>
-                {
-                    b.Navigation("Employees");
                 });
 #pragma warning restore 612, 618
         }
